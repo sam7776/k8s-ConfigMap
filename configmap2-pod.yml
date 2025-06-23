@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: pod-2
+spec:
+  containers:
+  - name: conf-2-conatainer
+    image: nginx
+    env:
+    - name: FOOD
+      valueFrom:
+        configMapKeyRef:
+          name: conf-2
+          key: food
+    - name: DRINK
+      valueFrom:
+        configMapKeyRef:
+          name: conf-2
+          key: drink

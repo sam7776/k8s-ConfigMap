@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-3
+spec:
+  containers:
+  - name: conf-3-container
+    image: httpd
+    volumeMounts:
+    - name: pendrive
+      mountPath: /etc/config
+  volumes:
+  - name: pendrive
+    configMap:
+      name: conf-3
